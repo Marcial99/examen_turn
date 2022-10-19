@@ -12,7 +12,7 @@ export default function Welcome(props) {
                             href={route("dashboard")}
                             className="text-sm text-gray-700 dark:text-gray-500 underline"
                         >
-                            Dashboard
+                            Dashboard asdasd
                         </Link>
                     ) : (
                         <>
@@ -20,7 +20,7 @@ export default function Welcome(props) {
                                 href={route("login")}
                                 className="text-sm text-gray-700 dark:text-gray-500 underline"
                             >
-                                Log in aaa
+                                Log in aaa asdasd
                             </Link>
 
                             <Link

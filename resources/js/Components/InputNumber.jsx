@@ -1,14 +1,15 @@
 import React from "react";
 
-const InputText = ({
+const InputNumber = ({
     label,
     id,
     name,
     onChange,
     required,
     placeholder,
-    type,
+    min,
     value,
+    max,
     readOnly,
     error,
     textError,
@@ -19,6 +20,7 @@ const InputText = ({
                 {label} {required && <span className="text-red-600">*</span>}
             </label>
             <input
+                type="number"
                 id={id}
                 className={`px-2 py-3 w-full ring-0 border-gray-400 ${
                     readOnly ? "bg-gray-200" : ""
@@ -27,7 +29,8 @@ const InputText = ({
                 onChange={onChange}
                 required={required}
                 placeholder={placeholder}
-                type={type}
+                min={min}
+                max={max}
                 value={value}
                 readOnly={readOnly}
             />
@@ -36,4 +39,4 @@ const InputText = ({
     );
 };
 
-export default InputText;
+export default InputNumber;

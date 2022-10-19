@@ -1,32 +1,56 @@
+import { Inertia } from "@inertiajs/inertia";
 import React from "react";
 
 const Layout = ({ children }) => {
     return (
         <>
-            <nav className="flex flex-col bg-white w-full h-16 shadow-lg z-50">
-                Optimus Fitness
-            </nav>
-            <div className="flex flex-row flex-1 min-h-screen z-0">
-                <aside className="flex flex-col h-full w-56">
-                    <div className="px-3 py-3 bg-gradient-to-r  from-blue-700 to-blue-500 text-white font-bold">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="w-6 h-6"
+            <div className="flex flex-row flex-1 min-h-screen z-0 ">
+                <aside className="h-full w-56 bg-white px-2 gap-4 hidden md:flex md:flex-col">
+                    <div className="w-3/4 mx-auto py-5">
+                        <img src="/assets/img/logo.png" alt="" />
+                    </div>
+                    <div className="text-sm font-normal">Usuarios</div>
+                    <div className="flex flex-col ">
+                        <div
+                            className="rounded-lg px-3 py-3 bg-gradient-to-r  from-blue-700 to-blue-500 text-white font-bold flex flex-row items-center gap-3 transition-all transform duration-300 hover:from-blue-800 hover:to-blue-600 hover:shadow hover:cursor-pointer "
+                            onClick={() =>
+                                Inertia.visit(route("mayorista.index"))
+                            }
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
-                            />
-                        </svg>
-                        Mayorista
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+                                />
+                            </svg>
+
+                            <span> Mayorista</span>
+                        </div>
                     </div>
                 </aside>
-                <div className="flex-1 bg-gray-100">{children}</div>
+
+                <div className="flex-1 bg-gray-100">
+                    <nav className="flex flex-col bg-white w-full h-16 shadow z-50 items-end">
+                        <div className="flex flex-row items-center justify-center  h-full gap-4 mr-5">
+                            <div className="flex flex-col">
+                                <p className="text-end">Juan Pablo Marcial</p>
+                                <p className="text-end">Admin</p>
+                            </div>
+                            <div className="rounded-full bg-slate-400  flex flex-col items-center justify-center w-12 h-12">
+                                <span className="text-white  text-2xl">JP</span>
+                            </div>
+                        </div>
+                    </nav>
+                    {children}
+                </div>
             </div>
         </>
     );

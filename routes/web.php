@@ -28,7 +28,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('/mayorista', MayoristaController::class);
+Route::get('/neighborhoods/{cp}', [MayoristaController::class, 'neighborhoods']);
+Route::get('/ciudad/{cp}', [MayoristaController::class, 'ciudad']);
+Route::get('/estado/{cp}', [MayoristaController::class, 'estado']);
+Route::get('/cp/{cp}', [MayoristaController::class, 'cp']);
 
 require __DIR__ . '/auth.php';
-
-Route::resource('/mayorista', MayoristaController::class);
