@@ -104,12 +104,14 @@ const MayoristaCreate = (props) => {
                                 </svg>
                             </label>
                         </div>
-                        <button
-                            className="bg-slate-600 rounded text-white px-2 py-1"
-                            onClick={handleBorrarFiltro}
-                        >
-                            Limpiar filtro
-                        </button>{" "}
+                        {busqueda !== "" && (
+                            <button
+                                className="bg-slate-600 rounded text-white px-2 py-1"
+                                onClick={handleBorrarFiltro}
+                            >
+                                Limpiar filtro
+                            </button>
+                        )}
                     </div>
 
                     <div className="flex flex-row gap-3">
